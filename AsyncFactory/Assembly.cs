@@ -13,7 +13,7 @@ namespace AsyncFactory
 
         public abstract IAsyncEnumerable<Assembly> AssemblyVersionGenerator();
 
-        public async Task Design()
+        public async Task ManufactureAsync()
         {
             Cost = double.MaxValue;
             await foreach (var version in AssemblyVersionGenerator())
@@ -28,7 +28,7 @@ namespace AsyncFactory
                 foreach (var component in version.Components)
                     if (component is Assembly assemblyComponent)
                     {
-                        await assemblyComponent.Design();
+                        await assemblyComponent.ManufactureAsync();
                         versionComponents.AddRange(assemblyComponent.Components);
                         versionCost += assemblyComponent.Cost;
                     }

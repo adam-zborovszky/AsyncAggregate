@@ -1,8 +1,6 @@
 using System;
 using Xunit;
 using System.Collections.Generic;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Linq;
 
 namespace AsyncFactory.Tests
@@ -48,13 +46,13 @@ namespace AsyncFactory.Tests
         }
     }
 
-    public class AsyncDesignTest1
+    public class AsyncManufactureTest1
     {
         [Fact]
         public async void Test1()
         {
             var testAssembly = new TestAssembly(0, 2);
-            await testAssembly.Design();
+            await testAssembly.ManufactureAsync();
             
             var a = testAssembly.Components.Select(i => i.Cost).ToArray();
             ;
