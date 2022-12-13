@@ -5,7 +5,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Linq;
 
-namespace AsyncDesign.Tests
+namespace AsyncFactory.Tests
 {
 
     public class TestComponent : Component

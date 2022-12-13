@@ -1,4 +1,4 @@
-﻿namespace AsyncDesign
+﻿namespace AsyncFactory
 {
     public abstract class Component
     {

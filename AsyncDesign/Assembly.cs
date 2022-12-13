@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace AsyncDesign
+namespace AsyncFactory
 {
     public abstract class Assembly : Component
     {
