@@ -11,12 +11,12 @@ namespace AsyncDesign
         {
         }
 
-        public abstract IAsyncEnumerable<Assembly> DesignGenerator();
+        public abstract IAsyncEnumerable<Assembly> AssemblyVersionGenerator();
 
         public async Task Design()
         {
             Cost = double.MaxValue;
-            await foreach (var version in DesignGenerator())
+            await foreach (var version in AssemblyVersionGenerator())
             {
                 // safety
                 if (version == null)

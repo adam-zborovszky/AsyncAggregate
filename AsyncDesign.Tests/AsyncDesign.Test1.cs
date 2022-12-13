@@ -4,9 +4,8 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Linq;
-using AsyncDesign;
 
-namespace Unfoldit.Tests
+namespace AsyncDesign.Tests
 {
 
     public class TestComponent : Component
@@ -29,29 +28,27 @@ namespace Unfoldit.Tests
             Number = number;
         }
 
-        public override async IAsyncEnumerable<Assembly> DesignGenerator()
+        public override async IAsyncEnumerable<Assembly> AssemblyVersionGenerator()
         {
             var random = new Random();
-            for (int i = 0; i < 1; i++) // versions
+            for (int i = 0; i < 9; i++) // versions
             {
                 var version = new TestAssembly(random.Next(100), Number);
                 // add sub Components
-                for (int j = 0; j < 3; j++)
-                    version.Components.Add(new TestComponent(random.Next(100), Number * 10 + j));
-                if (random.Next(10) < 6) // add a sub-Assembly
-                {
-                    version.Components.Add(new TestAssembly(random.Next(100), Number * 10 + 8));
-                }
-                if (random.Next(10) < 6) // add a sub-Assembly
-                {
-                    version.Components.Add(new TestAssembly(random.Next(100), Number * 10 + 9));
-                }
+                for (int j = 0; j < 5; j++)
+                    version.Components.Add(new TestComponent(i*1000 + random.Next(100), Number * 10 + j));
+                for (int j = 0; j < 5; j++)
+                    if (Number < 100000 && random.Next(10) < 8) // add a sub-Assembly
+                    {
+                        version.Components.Add(new TestAssembly(i * 1000 + random.Next(100), Number * 10 + 9));
+                    }
+                
                 yield return version;
             }
         }
     }
 
-    public class UnfoldItTest
+    public class AsyncDesignTest1
     {
         [Fact]
         public async void Test1()
