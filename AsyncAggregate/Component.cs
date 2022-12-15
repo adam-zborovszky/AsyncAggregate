@@ -1,4 +1,4 @@
-﻿namespace AsyncFactory
+﻿namespace AsyncAggregate
 {
     public abstract class Component
     {

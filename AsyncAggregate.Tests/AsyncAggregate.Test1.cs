@@ -3,7 +3,7 @@ using Xunit;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace AsyncFactory.Tests
+namespace AsyncAggregate.Tests
 {
 
     public class TestComponent : Component
@@ -29,7 +29,7 @@ namespace AsyncFactory.Tests
         public override async IAsyncEnumerable<Assembly> AssemblyVersionGenerator()
         {
             var random = new Random();
-            for (int i = 0; i < 9; i++) // versions
+            for (int i = 0; i < 1; i++) // versions
             {
                 var version = new TestAssembly(random.Next(100), Number);
                 // add sub Components

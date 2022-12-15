@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AsyncFactory\AsyncFactory.csproj" />
+    <ProjectReference Include="..\AsyncAggregate\AsyncAggregate.csproj" />
   </ItemGroup>
 
 </Project>

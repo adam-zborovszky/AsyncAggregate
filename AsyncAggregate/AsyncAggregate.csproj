@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <Authors>Adam Zborovszky</Authors>
+    <Description>A package to define nested object collections to describe complex system, where the definition of the describing object collection happens layer by layer, recursively.
+
+    </Description>
+    <PackageId>UnfoldIt</PackageId>
+    <Product>UnfoldIt</Product>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Company>ThrowToTheWind.com</Company>
+    <Nullable>enable</Nullable>  
+  </PropertyGroup>
+
+</Project>
