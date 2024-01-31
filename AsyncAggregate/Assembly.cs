@@ -20,12 +20,15 @@ namespace AsyncAggregate
             {
                 // safety
                 if (version == null)
+                {
                     continue;
+                }
 
                 // recursively unfold this version, then collect Components and cost
                 var versionComponents = new List<Component>();
                 double versionCost = 0;
                 foreach (var component in version.Components)
+                {
                     if (component is Assembly assemblyComponent)
                     {
                         await assemblyComponent.ManufactureAsync();
@@ -37,7 +40,7 @@ namespace AsyncAggregate
                         versionComponents.Add(component);
                         versionCost += component.Cost;
                     }
-                        
+                }        
                 // evaluate version and replace actual version if cheaper
                 if (versionCost < Cost)
                 {
