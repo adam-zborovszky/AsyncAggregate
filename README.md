@@ -1,6 +1,6 @@
 # AsyncAggregate
 
-AsyncAggregate provides two classes to decribe complex systems, what can be modeled by a collection of nested objects.
+AsyncAggregate follows the composite pattern. It provides two classes to decribe complex systems, what can be modeled by a collection of nested objects.
 These classes aim to define the way, how one root-object can be unfolded to a collection sub-elements recursively.
 
 The classes inherited from "Component" class (only) are the final atomic builder blocks of these collections. 
